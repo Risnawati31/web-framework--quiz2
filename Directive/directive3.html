@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Belajar Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	
+</head>
+<body>
+
+
+	<div id="app">
+		<img v-bind:src="imageSrc">
+		
+	</div>
+	
+	<script type="text/javascript">
+	Vue.config.silent = true
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			imageSrc: '1111.jpg',
+			}
+		
+		})
+		setTimeout(()=>{
+			vm.imageSrc = '12.jpg'
+			},3000);
+		
+	
+	</script>
+	</body>
+	</html>
+	

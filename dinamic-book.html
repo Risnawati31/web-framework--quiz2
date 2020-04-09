@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Belajar Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	
+</head>
+<body>
+<style type="text/css">
+
+.card{
+	background: #efefef;
+	border: 1px solid #ddd;
+	margin-right: 5px;
+	padding: 5px;
+	width: 200px;
+	float: left;
+	}
+	
+	h3{
+		min-height: 45px;
+	}
+</style>
+
+	<div id="app">
+		<book
+			title="C++ High Performance"
+			description="Write code that scales"
+			image="https://bootup.ai/blog/wp-content/uploads/2019/03/vue-js-adalah-berikut-penjelasan-cara-instalasi-kelebihan-dan-contoh-penerapannya-750x410.png"
+			>
+		</book>
+		<book1
+			title="C++ High Performance"
+			description="Write code that scales"
+			image="https://bootup.ai/blog/wp-content/uploads/2019/03/vue-js-adalah-berikut-penjelasan-cara-instalasi-kelebihan-dan-contoh-penerapannya-750x410.png"
+			>
+		</book1>
+	</div>
+		
+
+	<script type="text/javascript">
+	
+	var BookComponent= {
+		data(){
+			return{
+				classCard: 'card'
+				
+			}
+		},
+		props: ['title', 'description', 'image'],
+		template: `
+		<div :class="classCard">
+			<h3>{{ title }}</h3>
+			<img :src="image" style="width:100%">
+			<p v-html="description"></p>
+		</div>
+		`
+	}
+	new Vue({
+		el: '#app',
+		components: {
+			'book': BookComponent,
+			'book1': BookComponent,
+		}
+		
+		
+	})
+	</script>
+	</body>
+	</html>
+	

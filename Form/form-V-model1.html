@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Belajar Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	
+</head>
+<body>
+
+
+	<div id="app">
+		<form>
+			<input type="number" name="price" v-model.number="price" />
+				
+				<br><br>
+				<input type="text" name="title" v-model.trim="title" placeholder="masukkan judul"> </textarea>
+				{{ title }}
+		</form>
+	</div>
+	
+	<script type="text/javascript">
+	Vue.config.silent = true
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			title: ""
+			},
+		
+		})
+		
+		
+	
+	</script>
+	</body>
+	</html>
+	
